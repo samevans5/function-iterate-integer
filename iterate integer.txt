@@ -1,0 +1,16 @@
+def iterateinteger(x):
+    numlist = []
+    tenthpos = 10
+    i = 0
+    while i < len(str(x)):
+        currentdigit = int(x) % tenthpos
+        if currentdigit >= 10:
+            currentdigit /= (tenthpos / 10)
+        numlist.append(math.floor(currentdigit))
+        x -= int(currentdigit)
+        tenthpos *= 10
+        i += 1
+
+    numlist.reverse()
+
+    return numlist
